@@ -798,7 +798,16 @@ def get_github_repo_count(username):
         if 'github_token_index' not in st.session_state:
             st.session_state.github_token_index = 0
             
-        github_token = st.secrets.get("github_token", "") if "secrets" in dir(st) else os.environ.get("GITHUB_TOKEN", "")
+        # Try to get GitHub token from Streamlit secrets or environment variables
+        github_token = ""
+        if hasattr(st, "secrets") and "github_token" in st.secrets:
+            github_token = st.secrets["github_token"]
+        else:
+            github_token = os.environ.get("GITHUB_TOKEN", "")
+        
+        # Use authentication if token is available
+        if github_token:
+            headers['Authorization'] = f'token {github_token}'
 
         
         # Use authentication if tokens are available
