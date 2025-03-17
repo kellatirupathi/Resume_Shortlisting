@@ -794,10 +794,6 @@ def get_github_repo_count(username):
             'Accept': 'application/vnd.github.v3+json'
         }
         
-        # Create token pool and rotate through them similar to Gemini API keys
-        if 'github_token_index' not in st.session_state:
-            st.session_state.github_token_index = 0
-            
         # Try to get GitHub token from Streamlit secrets or environment variables
         github_token = ""
         if hasattr(st, "secrets") and "github_token" in st.secrets:
@@ -808,19 +804,6 @@ def get_github_repo_count(username):
         # Use authentication if token is available
         if github_token:
             headers['Authorization'] = f'token {github_token}'
-
-        
-        # Use authentication if tokens are available
-        if any(github_tokens):
-            current_token_index = st.session_state.github_token_index
-            token = github_tokens[current_token_index % len(github_tokens)]
-            
-            if token:
-                # Use token authentication
-                headers['Authorization'] = f'token {token}'
-                
-                # Rotate to next token for subsequent calls
-                st.session_state.github_token_index = (current_token_index + 1) % len(github_tokens)
         
         # Add caching to avoid repeated calls for the same username
         if 'github_cache' not in st.session_state:
@@ -857,10 +840,9 @@ def get_github_repo_count(username):
                     if 'X-RateLimit-Remaining' in response.headers and int(response.headers['X-RateLimit-Remaining']) == 0:
                         logging.warning(f"GitHub API rate limit exceeded for username: {username}")
                         
-                        # If we have multiple tokens, try the next one
-                        if len(github_tokens) > 1 and retry < max_retries - 1:
-                            st.session_state.github_token_index = (st.session_state.github_token_index + 1) % len(github_tokens)
-                            time.sleep(1)  # Brief pause before retry
+                        # If we hit a rate limit, just wait and retry if we have retries left
+                        if retry < max_retries - 1:
+                            time.sleep(2)  # Wait longer before retry
                             continue
                     
                     # Fall back to returning 0 if rate limited
