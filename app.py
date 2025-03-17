@@ -798,9 +798,8 @@ def get_github_repo_count(username):
         if 'github_token_index' not in st.session_state:
             st.session_state.github_token_index = 0
             
-        github_tokens = [
-            "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"  # Add your GitHub tokens here
-        ]
+        github_token = st.secrets.get("github_token", "") if "secrets" in dir(st) else os.environ.get("GITHUB_TOKEN", "")
+
         
         # Use authentication if tokens are available
         if any(github_tokens):
