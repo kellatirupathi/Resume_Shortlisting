@@ -1324,7 +1324,7 @@ def process_resumes_in_batches(df, process_function, batch_size=5):
     
     # Initialize counters for each key if they don't exist
     if 'key_resume_counts' not in st.session_state:
-        st.session_state.key_resume_counts = [0, 0, 0, 0, 0]  # Track resumes processed by each key (now 5 keys)
+        st.session_state.key_resume_counts = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  # Reset counts for all 10 keys
     
     # Process in batches
     processed_count = 0
