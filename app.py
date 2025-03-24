@@ -1731,9 +1731,41 @@ user456    https://example.com/resume2.pdf"""
                 st.markdown(f"<div style='margin: 10px 0 20px 0;'>Selected technologies: {tech_html}</div>", unsafe_allow_html=True)
 
                 def match_technologies(project_technologies, tech_list):
+                    """
+                    Match technologies in projects while handling special cases like Java vs JavaScript.
+                    Returns True only if ALL technologies in tech_list are found in project_technologies.
+                    """
                     if not isinstance(project_technologies, str):
                         return False
-                    return all(tech in project_technologies.lower() for tech in tech_list)
+    
+                    project_tech_lower = project_technologies.lower()
+    
+                    for tech in tech_list:
+                        tech_lower = tech.strip().lower()
+        
+        # Special case for "java" to prevent matching with "javascript"
+                        if tech_lower == "java":
+            # Look for "java" that's not part of "javascript"
+            # This checks for "java" followed by word boundary or specific delimiters
+                            import re
+                            java_pattern = r'(^|\W)java($|\W)'  # Match "java" as a whole word
+                            if not re.search(java_pattern, project_tech_lower):
+                                return False
+        
+        # Special case for "javascript" to prevent matching partial "java"
+                        elif tech_lower == "javascript":
+            # Look for exact "javascript" matches
+                            import re
+                            js_pattern = r'(^|\W)javascript($|\W)'  # Match "javascript" as a whole word
+                            if not re.search(js_pattern, project_tech_lower):
+                                return False
+        
+        # Regular substring matching for other technologies
+                        else:
+                            if tech_lower not in project_tech_lower:
+                                return False
+    
+                    return True
 
                 matched_df = result_df[result_df['Project Titles'].apply(lambda x: match_technologies(x, tech_list))]
 
