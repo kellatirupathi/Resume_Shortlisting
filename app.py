@@ -27,16 +27,16 @@ import cv2
 # ========== CONFIGURATION ==========
 # Multiple Gemini API Keys - Will be used in rotation
 GEMINI_API_KEYS = [
-    "AIzaSyBBFKiwVjOlz06hGtjXe_NBa8D4Iyh_k_k",  # Default key
-    "AIzaSyCc8zOm1-tjVhnQGaYCBK-vmhDClUAMyQI",  # Add your second API key here
-    "AIzaSyBWiEJQQrcqh4bSPHNyOIkbZEeQWVwXsOI",
-    "AIzaSyBLDNq9h4ZqLoOEPIwxBOeNkYLzXRyzXnE",
-    "AIzaSyAtPq8ltidY48tJMtGBrq527rTbV56W5Qc",
-    "AIzaSyA4yzBQ4omQEMDV2BV_bZ9Da0pOWvqXZ2I",
-    "AIzaSyBmEhXf9GpC3FOb_qOfl_avzEvXk2tXy24",
-    "AIzaSyDWqfVEbw7ix0DtL39qA0Du851VFxiMh8I",
-    "AIzaSyAIIFn4dqzq4GYPSK8FMrJ3CneNFlC-36s",
-    "AIzaSyDnXW0oe0r-vOO9PIp0EFXQLpsM4FF7cIU"   
+    "AIzaSyBBFKiwVjOlz06hGtjXe_NBa8D4Iyh_k_k",  # Original key
+    "AIzaSyCc8zOm1-tjVhnQGaYCBK-vmhDClUAMyQI",  # Additional key 1
+    "AIzaSyB3ECUbTfpHjMsAn1inGJEwTGyXOGQg_RA",  # Additional key 2
+    "AIzaSyBzxb-UfkMwjLXW0wW1kU5m9UpGy7hai-I",  # Additional key 3
+    "AIzaSyART6zbiSxDZnZUhL8ZVt-fM3lkFZpy8No",  # Additional key 4
+    "AIzaSyCbLjAD4F7Xf4W_JLxZX3QuxY0mugoo9Zo",  # Additional key 5
+    "AIzaSyDGrgoSj7iMgCo2ggeNL6r1h4CLCd49Izc",  # Additional key 6
+    "AIzaSyCmzYbqgdGJB3vfcbHpio_-mN8FnPhw3hA",  # Additional key 7
+    "AIzaSyClf-hDS7SFORs71DO79deunBXJnZw22oM",  # Additional key 8
+    "AIzaSyAEw4lTqJexpb5y70mOvvyzBmJnKwsi4cY",  # Additional key 9
 ]
 
 # Set up logging
