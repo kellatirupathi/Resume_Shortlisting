@@ -1937,7 +1937,7 @@
 # def main():
 #     # Set page configuration
 #     st.set_page_config(
-#         page_title="Smart Resume Analyzer",
+#         page_title="Resume Analyzer",
 #         page_icon="📄",
 #         layout="wide",
 #         initial_sidebar_state="expanded"
