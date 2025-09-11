@@ -889,7 +889,7 @@ def analyze_text_with_gemini(prompt):
         if not current_api_key:
             continue
 
-        gemini_api_url = f"https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash-lite:generateContent?key={current_api_key}"
+        gemini_api_url = f"https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key={current_api_key}"
 
         # API request payload
         payload = {
