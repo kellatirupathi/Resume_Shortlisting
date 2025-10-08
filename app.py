@@ -26,18 +26,32 @@ import cv2
 
 # ========== CONFIGURATION ==========
 # Multiple Gemini API Keys - Will be used in rotation
+# GEMINI_API_KEYS = [
+#     "AIzaSyBBFKiwVjOlz06hGtjXe_NBa8D4Iyh_k_k",  # Original key
+#     "AIzaSyCc8zOm1-tjVhnQGaYCBK-vmhDClUAMyQI",  # Additional key 1
+#     "AIzaSyB3ECUbTfpHjMsAn1inGJEwTGyXOGQg_RA",  # Additional key 2
+#     "AIzaSyBzxb-UfkMwjLXW0wW1kU5m9UpGy7hai-I",  # Additional key 3
+#     "AIzaSyART6zbiSxDZnZUhL8ZVt-fM3lkFZpy8No",  # Additional key 4
+#     "AIzaSyCbLjAD4F7Xf4W_JLxZX3QuxY0mugoo9Zo",  # Additional key 5
+#     "AIzaSyDGrgoSj7iMgCo2ggeNL6r1h4CLCd49Izc",  # Additional key 6
+#     "AIzaSyCmzYbqgdGJB3vfcbHpio_-mN8FnPhw3hA",  # Additional key 7
+#     "AIzaSyClf-hDS7SFORs71DO79deunBXJnZw22oM",  # Additional key 8
+#     "AIzaSyAEw4lTqJexpb5y70mOvvyzBmJnKwsi4cY",  # Additional key 9
+# ]
+
 GEMINI_API_KEYS = [
-    "AIzaSyBBFKiwVjOlz06hGtjXe_NBa8D4Iyh_k_k",  # Original key
-    "AIzaSyCc8zOm1-tjVhnQGaYCBK-vmhDClUAMyQI",  # Additional key 1
-    "AIzaSyB3ECUbTfpHjMsAn1inGJEwTGyXOGQg_RA",  # Additional key 2
-    "AIzaSyBzxb-UfkMwjLXW0wW1kU5m9UpGy7hai-I",  # Additional key 3
-    "AIzaSyART6zbiSxDZnZUhL8ZVt-fM3lkFZpy8No",  # Additional key 4
-    "AIzaSyCbLjAD4F7Xf4W_JLxZX3QuxY0mugoo9Zo",  # Additional key 5
-    "AIzaSyDGrgoSj7iMgCo2ggeNL6r1h4CLCd49Izc",  # Additional key 6
-    "AIzaSyCmzYbqgdGJB3vfcbHpio_-mN8FnPhw3hA",  # Additional key 7
-    "AIzaSyClf-hDS7SFORs71DO79deunBXJnZw22oM",  # Additional key 8
-    "AIzaSyAEw4lTqJexpb5y70mOvvyzBmJnKwsi4cY",  # Additional key 9
+    "AIzaSyA3mzvYW-tzuXB7_dgNC7TdAGNoM-lL1Bs",  # Original key
+    "AIzaSyDD_Hw6auummFoYDO2hexFgln9lyKItSRU",  # Additional key 1
+    "AIzaSyCsZLwbtweXAP-UIPmhO3Ff7b1_N8u3-Zs",  # Additional key 2
+    "AIzaSyCnxjxgp0fybAse8-eBH2vYi12Eaj7io70",  # Additional key 3
+    "AIzaSyBfkkLnq8RdZY20-zAeul9p9wt9XMjZPZo",  # Additional key 4
+    "AIzaSyDuRVO_8z64tnsZWWvg4BRQwoXwsFGrGmA",  # Additional key 5
+    "AIzaSyA1uFUOhva3tPdovI9Yn2_0sNNfaFZt9Kk",  # Additional key 6
+    "AIzaSyBsQg2HScElN15Ut_foQvSl24HgjOev6sk",  # Additional key 7
+    "AIzaSyDAMzHv1ab9I8pH_ol_t7QoP8t-IX59NAg",  # Additional key 8
+    "AIzaSyDUppgRjum-2w9dGbFfk10tPaNed7EHn-w",  # Additional key 9
 ]
+
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
